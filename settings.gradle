@@ -1,0 +1,4 @@
+rootProject.name = 'timeline'
+include 'timeline-model'
+include 'timeline-templated-view'
+
