@@ -4,10 +4,7 @@ import com.nishant.timeline.unit.TimelineEvent;
 
 import java.io.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 /*
 TODO: log exception
@@ -22,6 +19,7 @@ public class FileTimeLineDataRetriever implements TimeLineDataRetriever {
     public FileTimeLineDataRetriever(String dataFilePath) {
         timeLineData = readData(dataFilePath);
         timeLineData.sort(Comparator.comparing(TimelineEvent::getEventTime));
+        Collections.reverse(timeLineData);
     }
 
     private List<TimelineEvent> readData(String filePath) {
